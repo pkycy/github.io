@@ -3,10 +3,10 @@
   --red-1: #528bff;
   --red-2: #7aa7ff;
   --red-3: #adc9ff;
-  --red-4: #d1e0ff;
-  --red-5: #e5eeff;
-  --red-5-5: #ebf1ff;
-  --red-6: #f5f8ff;
+  --red-4: #cdf;
+  --red-5: #cdf;
+  --red-5-5: #cdf;
+  --red-6: #cdf;
   --grey-9: #999;
   --grey-7: #777;
   --color-archive-year: #000;
@@ -45,10 +45,10 @@
   --cursor-text: url("../images/cursor/reimu-cursor-text.png"), text;
 }
 [data-theme="dark"]:root {
-  --red-4: rgba(209,224,255,0.5);
-  --red-5: rgba(229,238,255,0.2);
-  --red-5-5: rgba(235,241,255,0.1);
-  --red-6: rgba(245,248,255,0.2);
+  --red-4: rgba(204,221,255,0.5);
+  --red-5: rgba(204,221,255,0.2);
+  --red-5-5: rgba(204,221,255,0.1);
+  --red-6: rgba(204,221,255,0.2);
   --color-archive-year: #999;
   --color-default: #999;
   --color-border: var(--red-5);
@@ -2297,11 +2297,12 @@ pre .javascript .function {
   display: flex;
   position: relative;
   justify-content: center;
-  border: 10px var(--color-red-3-shadow) double;
+  border: 5px var(--color-red-3-shadow) solid;
   transition: border 0.5s;
+  border-radius: 5px;
 }
 .sidebar-menu-link-wrap:hover {
-  border: 10px var(--color-h2-after) double;
+  border: 5px var(--color-h2-after) solid;
 }
 .sidebar-menu-link-wrap:hover .sidebar-menu-icon:before {
   transform: rotate(90deg) scale(1.1);
@@ -2330,8 +2331,8 @@ pre .javascript .function {
   pointer-events: none;
 }
 .link-active {
-  background: var(--red-0);
-  border: 10px var(--color-wrap) double;
+  background: var(--red-1);
+  border: 5px var(--red-1) solid;
   box-shadow: 0 0 10px 3px var(--color-red-6-shadow);
   opacity: 0.8;
 }
