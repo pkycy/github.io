@@ -290,8 +290,18 @@
       
       
       
+        <a data-aos="zoom-in" href="/2024/11/28/%E5%9C%A8github%E4%B8%8A%E9%85%8D%E7%BD%AEssh/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2024/11/28/%E5%9C%A8github%E4%B8%8A%E9%85%8D%E7%BD%AEssh/" itemprop="commentCount"></span>
+          留言
+        </a>
       
       
+      
+      
+        <span data-aos="zoom-in" id="/2024/11/28/%E5%9C%A8github%E4%B8%8A%E9%85%8D%E7%BD%AEssh/" class="leancloud_visitors article-visitor-link" data-flag-title="在github上配置ssh">
+          <span class="leancloud-visitors-count">0</span>
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
       
       
       
@@ -321,6 +331,8 @@
 
 
 </article>
+
+  <section id="comments" class="vcomment" data-aos="fade-up"></section>
 
 
 
@@ -545,6 +557,34 @@
         }
       </script>
       
+  
+<script src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js" integrity="sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn" crossorigin="anonymous" data-pjax></script>
+
+  <script data-pjax>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    var recordIP = JSON.parse('true');
+    var highlight = JSON.parse('true');
+    var visitor = JSON.parse('true');
+
+    new Valine({
+      el: '.vcomment',
+      appId: "CxeG15At5iKLRqUZo3jSSXxW-gzGzoHsz",
+      appKey: "5JsJNcebUmeYdqzmf0zZzI6T",
+      placeholder: "Just go go",
+      pageSize: '10',
+      avatar: 'mp',
+      lang: 'zh-cn',
+      recordIP: recordIP,
+      highlight: highlight,
+      visitor: visitor,
+      requiredFields: guest_info,
+      path: window.location.pathname
+    });
+  </script>
+
 
 
 
