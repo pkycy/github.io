@@ -37,7 +37,7 @@
 <meta property="og:description" content="生成密钥打开Git Bash，输入以下命令：$ ssh-keygen -t rsa -C &quot;这里写你注册github时的邮箱&quot;会弹出来一段话$ Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;86132&#x2F;.ssh&#x2F;id_rsa):按enter键，选择n然后再输入以下命令查看公钥：$ cat ~&#x2F;.ssh&#x2F;id_rsa.pub复制得到的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-28T15:57:05.306Z">
-<meta property="article:modified_time" content="2024-11-29T06:24:04.748Z">
+<meta property="article:modified_time" content="2024-11-29T12:18:06.005Z">
 <meta property="article:author" content="xiaochuan">
 <meta property="article:tag" content="configuration">
 <meta property="article:tag" content="github">
@@ -277,12 +277,12 @@
       
       
         <h1 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h1><p>打开Git Bash，输入以下命令：<br><code>$ ssh-keygen -t rsa -C &quot;这里写你注册github时的邮箱&quot;</code><br>会弹出来一段话<br><code>$ Enter file in which to save the key (/c/Users/86132/.ssh/id_rsa):</code><br>按enter键，选择n<br>然后再输入以下命令查看公钥：<br><code>$ cat ~/.ssh/id_rsa.pub</code><br>复制得到的公钥</p>
-<h1 id="将密钥添加要github上"><a href="#将密钥添加要github上" class="headerlink" title="将密钥添加要github上"></a>将密钥添加要github上</h1><p>打开github，点击右上角头像，点击设置，点击ssh and gpg keys，点击new ssh key<br>标题随便取(自己知道什么意思就行)，将复制的公钥粘贴到key字段里，点击add ssh key<br>测试一下连通性，连接失败，嘻嘻</p>
+<h1 id="将密钥添加要github上"><a href="#将密钥添加要github上" class="headerlink" title="将密钥添加要github上"></a>将密钥添加要github上</h1><p>打开github，点击右上角头像，点击设置<br>点击ssh and gpg keys，点击new ssh key<br>标题随便取(自己知道什么意思就行)<br>将复制的公钥粘贴到key字段里，点击add ssh key<br>测试一下连通性，连接失败，嘻嘻</p>
 <h1 id="关键一步，配置config"><a href="#关键一步，配置config" class="headerlink" title="关键一步，配置config"></a>关键一步，配置config</h1><p>回到Git Bash，输入以下命令，在vim编辑器中编辑config文件：<br><code>$ vim ~/.ssh/config</code><br>粘贴以下内容，记得改邮箱：</p>
 <blockquote>
 <p>Host github.com<br>User 这里写你注册github时的邮箱<br>Hostname ssh.github.com<br>PreferredAuthentications publickey<br>IdentityFile ~&#x2F;.ssh&#x2F;id_rsa<br>Port 443</p>
 </blockquote>
-<p>然后按Esc键退出insert模式，（按i键就又回到插入模式），退出插入模式后输入以下命令<br>:wq<br>再按Enter，即可回到原来的界面<br>然后就可以来测试联通性啦，输入以下命令<br><code>$ ssh -T git@github.com </code><br>大功告成！</p>
+<p>然后按Esc键退出insert模式，（按i键就又回到插入模式），退出插入模式后输入以下命令<br><code>:wq</code><br>再按Enter，即可回到原来的界面<br>然后就可以来测试联通性啦，输入以下命令<br><code>$ ssh -T git@github.com </code><br>大功告成！</p>
 
       
     </div>
