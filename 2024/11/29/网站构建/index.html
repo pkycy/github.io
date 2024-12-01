@@ -1,0 +1,643 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};</script>
+  
+  
+  <title>
+    从1到2搭建一个自己的博客网站 |
+    
+    xiaochuan
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+  
+    <meta name="description" content="网站基本介绍我的这个网站是基于Hexo框架，使用的是Hexo上的一款主题：hexo-theme-reimu然后经过自己的一些修改，成了现在这个样子。本文主要以hexo-theme-reimu为例进行讲解。为什么叫从1到2呢？因为从0到1网上已经有很多参考的文章了。本文主要讲安装完主题后，会遇到的一些问题，以及怎么做一些小小的修改。毕竟你可能不是对这个主题的每个部分都很喜欢。有些地方原作者@拔剑Sk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从1到2搭建一个自己的博客网站">
+<meta property="og:url" content="http://example.com/2024/11/29/%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/index.html">
+<meta property="og:site_name" content="xiaochuan">
+<meta property="og:description" content="网站基本介绍我的这个网站是基于Hexo框架，使用的是Hexo上的一款主题：hexo-theme-reimu然后经过自己的一些修改，成了现在这个样子。本文主要以hexo-theme-reimu为例进行讲解。为什么叫从1到2呢？因为从0到1网上已经有很多参考的文章了。本文主要讲安装完主题后，会遇到的一些问题，以及怎么做一些小小的修改。毕竟你可能不是对这个主题的每个部分都很喜欢。有些地方原作者@拔剑Sk">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-29T13:13:15.052Z">
+<meta property="article:modified_time" content="2024-12-01T14:56:03.084Z">
+<meta property="article:author" content="xiaochuan">
+<meta property="article:tag" content="xiaochuan">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="xiaochuan" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/pkqiu.webp">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  
+  
+  
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+         M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+        </svg>
+      </div>
+      <div class="loading-word">摸魚中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <!--<div class="main-nav-icon icon-taichi"></div>-->
+        <a class="main-nav-link" href="/">Home</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <!--<div class="main-nav-icon icon-taichi"></div>-->
+        <a class="main-nav-link" href="/archives">Archives</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <!--<div class="main-nav-icon icon-taichi"></div>-->
+        <a class="main-nav-link" href="/Author">Author</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <!--<div class="main-nav-icon icon-taichi"></div>-->
+        <a class="main-nav-link" href="/People">People</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+   <!-- 
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"></a>
+    -->
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/p0.webp" alt="从1到2搭建一个自己的博客网站">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">从1到2搭建一个自己的博客网站</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content">
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrapper wrap-sticky">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">网站基本介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%B4%E5%83%8F%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">头像问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">文章封面的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#about%E5%92%8Cfriend%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">about和friend没有任何显示的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E9%A1%B6%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%92%8C%E4%BE%A7%E8%BE%B9%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">6.</span> <span class="toc-text">如何修改顶部导航栏和侧边导航栏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E8%89%B2%E6%80%8E%E4%B9%88%E6%94%B9%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">主题色怎么改的问题</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/OIP-C.webp" data-sizes="auto" alt="xiaochuan" class="lazyload">
+  <div class="sidebar-author-name">xiaochuan</div>
+  <div class="sidebar-description">xiaochuan Blog</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">1</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Home</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Archives</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/Author" aria-label="Author"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Author</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/People" aria-label="People"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">People</div>
+    </div>
+  
+</div>
+</div>
+      
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  
+</aside>
+
+          
+          <section id="main"><article id="post-网站构建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <a href="/2024/11/29/%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="article-date-link" data-aos="zoom-in">
+    <time datetime="2024-11-29T13:13:15.052Z" itemprop="datePublished">2024-11-29</time>
+    <time style="display: none;" id="post-update-time">2024-12-01</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+      
+        <h1 id="网站基本介绍"><a href="#网站基本介绍" class="headerlink" title="网站基本介绍"></a>网站基本介绍</h1><p>我的这个网站是基于Hexo框架，使用的是Hexo上的一款主题：<a target="_blank" rel="noopener" href="https://d-sketon.github.io/">hexo-theme-reimu</a><br>然后经过自己的一些修改，成了现在这个样子。<br>本文主要以<a target="_blank" rel="noopener" href="https://d-sketon.github.io/">hexo-theme-reimu</a>为例进行讲解。<br>为什么叫从1到2呢？因为从0到1网上已经有很多参考的文章了。<br>本文主要讲安装完主题后，会遇到的一些问题，以及怎么做一些小小的修改。<br>毕竟你可能不是对这个主题的每个部分都很喜欢。<br>有些地方原作者<a target="_blank" rel="noopener" href="https://github.com/D-Sketon">@拔剑Sketon</a>在他的<a target="_blank" rel="noopener" href="https://d-sketon.github.io/20230707/hexo-theme-reimu-guide/">食用指南</a>里有提到<br>可能会有所重复。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先，打开心爱的vscode，在vscode中打开blog文件夹，然后我们就可以开始了，下面提到的文件除特殊说明外，均指 reimu 里的文件。<br>温馨提示：文中代码注释我习惯性用&#x2F;&#x2F;,但是请不要在你的代码里这么写，不然会报错。</p>
+<h1 id="头像问题"><a href="#头像问题" class="headerlink" title="头像问题"></a>头像问题</h1><p>一开始安装完主题时是没有头像的，此时如果你往themes\reimu\source\images里存入一张图片，然后修改_config.yml文件里的avatar文件名。<br>那么恭喜你！头像依旧没有显示正确！<br><code>avatar: &quot;OIP-C.webp&quot; # source/_data/avatar/avatar.webp</code><br>看这段代码的注释，头像应当存放在 source&#x2F;_data&#x2F;avatar&#x2F; （这里的source是外面的source），如果没有找到对应的文件夹就自己创建。</p>
+<h1 id="文章封面的问题"><a href="#文章封面的问题" class="headerlink" title="文章封面的问题"></a>文章封面的问题</h1><p>文章存放在 source&#x2F;_posts目录下，直接举例，新建一个 .md 文件，在开头放入这一段：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 从1到2搭建一个自己的博客网站   //这里就是你的标题</span><br><span class="line">cover: /images/p0.webp             //这里就是你的文章封面，放在 themes\reimu\source\images 下</span><br><span class="line">sticky: true                       //这里表示文章置顶</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h1 id="about和friend没有任何显示的问题"><a href="#about和friend没有任何显示的问题" class="headerlink" title="about和friend没有任何显示的问题"></a>about和friend没有任何显示的问题</h1><p>在_config.yml文件里有这样一段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br><span class="line">  About: /About</span><br><span class="line">  Friend: /Friend</span><br></pre></td></tr></table></figure>
+<p>所以我们只需在source（外面那个）下新建一个 About.md文件，然后输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: </span><br><span class="line">date: 2024-11-29 12:00:00</span><br><span class="line">type: &quot;page&quot; # 这将帮助Hexo识别页面类型</span><br><span class="line">comments: true # 如果你希望关于页面有评论功能，设置为true</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 作者简介</span><br><span class="line">- ~~来自某著名末流985大学软件学院~~</span><br><span class="line">- 邮箱：2726688921@qq.com</span><br><span class="line">-       13060626770@163.com</span><br><span class="line">- 立志做一个全栈~~牛马~~工程师</span><br></pre></td></tr></table></figure>
+<p>Friend界面同理</p>
+<h1 id="如何修改顶部导航栏和侧边导航栏"><a href="#如何修改顶部导航栏和侧边导航栏" class="headerlink" title="如何修改顶部导航栏和侧边导航栏"></a>如何修改顶部导航栏和侧边导航栏</h1><p>先说说侧边导航栏的位置问题：<br>在_config.yml下搜索 sidebar ，把它的值修改为 left 导航栏就会显示在左边。</p>
+<p>侧边栏的样式修改问题：<br>找到这个文件：themes\reimu\layout_partial\sidebar\common-sidebar.ejs 最后一段代码是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;sidebar-menu&quot;&gt;</span><br><span class="line">  &lt;% for (var i in theme.menu) &#123; %&gt;</span><br><span class="line">    &lt;div class=&quot;sidebar-menu-link-wrap&quot;&gt;</span><br><span class="line">      &lt;a class=&quot;sidebar-menu-link-dummy&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot; aria-label=&quot;&lt;%= __(i) %&gt;&quot;&gt;&lt;/a&gt;</span><br><span class="line">      &lt;!--&lt;div class=&quot;sidebar-menu-icon icon-taichi&quot;&gt;&lt;/div&gt;--&gt;  //这一行是那个太极图像，我不喜欢，所以注释掉了，你也可以换成别的</span><br><span class="line">      &lt;div class=&quot;sidebar-menu-link&quot;&gt;&lt;%= __(i) %&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>找到sidebar-menu，sidebar-menu-link-wrap，sidebar-menu-link-dummy的定义。<br>找到这个文件 themes&#x2F;reimu&#x2F;source&#x2F;css&#x2F;_partial&#x2F;sidebar.styl<br>搜索menu，找到这部分代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">.sidebar-menu</span><br><span class="line">  margin: 20px 0</span><br><span class="line">  width: 100%</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">.sidebar-menu-link-wrap</span><br><span class="line">  margin: 8px 50px</span><br><span class="line">  display: flex</span><br><span class="line">  position: relative</span><br><span class="line"></span><br><span class="line">  justify-content: center</span><br><span class="line">  border: 5px var(--color-red-3-shadow) solid   </span><br><span class="line">  transition: border .5s</span><br><span class="line">  border-radius: 5px</span><br><span class="line">  &amp;:hover</span><br><span class="line">    border: 5px var(--color-h2-after) solid</span><br><span class="line"></span><br><span class="line">  &amp;:hover .sidebar-menu-icon:before</span><br><span class="line">    transform: rotate(90deg) scale(1.1)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">.sidebar-menu-icon</span><br><span class="line">  @extend $menu-link</span><br><span class="line">  &amp;:before</span><br><span class="line">    font-size: 24px</span><br><span class="line">    font-weight: 400</span><br><span class="line">    transform: rotate(90deg)</span><br><span class="line">    transition: transform .3s</span><br><span class="line">    will-change: transform</span><br><span class="line"></span><br><span class="line">  pointer-events: none</span><br><span class="line">  padding: 5px</span><br><span class="line">  display: flex</span><br><span class="line">  align-items: center</span><br><span class="line"></span><br><span class="line">.sidebar-menu-link-dummy</span><br><span class="line">  position: absolute</span><br><span class="line">  width: 100%</span><br><span class="line">  height: 100%</span><br><span class="line">  top: 0</span><br><span class="line">  left: 0</span><br><span class="line"></span><br><span class="line">.sidebar-menu-link</span><br><span class="line">  @extend $menu-link</span><br><span class="line">  pointer-events: none</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>通过修改这里的代码你可以把它改成自己喜欢的样子，具体怎么改就不赘述了，不会可以问GPT</p>
+<p>顶部导航栏的修改：找到这个文件：<br>themes\reimu\layout_partial\header.ejs<br>开头部分的代码是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;header-nav&quot;&gt;</span><br><span class="line">  &lt;nav id=&quot;main-nav&quot;&gt;</span><br><span class="line">    &lt;% for (var i in theme.menu) &#123; %&gt;</span><br><span class="line">      &lt;span class=&quot;main-nav-link-wrap&quot;&gt;</span><br><span class="line">        &lt;!--&lt;div class=&quot;main-nav-icon icon-taichi&quot;&gt;&lt;/div&gt;--&gt;      //这里是那个太极图案，我不喜欢，注释掉了，你可以改成自己喜欢的</span><br><span class="line">        &lt;a class=&quot;main-nav-link&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= __(i) %&gt;&lt;/a&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">    &lt;a id=&quot;main-nav-toggle&quot; class=&quot;nav-icon&quot;&gt;&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">  &lt;nav id=&quot;sub-nav&quot;&gt;</span><br><span class="line">   &lt;!-- &lt;% if (theme.rss) &#123; %&gt;</span><br><span class="line">      &lt;a id=&quot;nav-rss-link&quot; class=&quot;nav-icon&quot; href=&quot;&lt;%- url_for(theme.rss) %&gt;&quot; title=&quot;&lt;%= __(&#x27;rss_feed&#x27;) %&gt;&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</span><br><span class="line">    &lt;% &#125; %&gt;--&gt;       //这里是rss,我用不到，所以注释掉了</span><br></pre></td></tr></table></figure>
+<p>如果你想修改其他地方，步骤是一样的，在 themes\reimu\layout 下找找看（见名知意），你要修改侧边栏，就找到 sidebar。<br>然后看你要修改的那部分在哪里修饰的，看看都用了哪些class，然后再到 themes\reimu\source\css 下找到对应的比如说侧边栏sidebar.styl 然后搜索关键字，很快就可以找它们的具体定义，然后就可根据自己的喜好修改了，遇到看不懂的代码或者不知道怎么改，可以问一下GPT。</p>
+<h1 id="主题色怎么改的问题"><a href="#主题色怎么改的问题" class="headerlink" title="主题色怎么改的问题"></a>主题色怎么改的问题</h1><p>这一点原作者有说，找到 themes\reimu\source\css_variables.styl 这个文件，<br>修改以下颜色：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">:root</span><br><span class="line">  --red-0: hsl(0, 100%, 50%)</span><br><span class="line">  --red-1: hsl(0, 100%, 66%)</span><br><span class="line">  --red-2: hsl(0, 100%, 74%)</span><br><span class="line">  --red-3: hsl(0, 100%, 84%)</span><br><span class="line">  --red-4: hsl(0, 100%, 91%)</span><br><span class="line">  --red-5: hsl(0, 100%, 95%)</span><br><span class="line">  --red-5-5: hsl(0, 100%, 96%)</span><br><span class="line">  --red-6: hsl(0, 100%, 98%)</span><br><span class="line"></span><br><span class="line">  --color-red-6-shadow: hsla(0, 100%, 65%, 0.6)</span><br><span class="line">  --color-red-3-shadow: hsla(0, 100%, 65%, 0.3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[data-theme=&quot;dark&quot;]</span><br><span class="line">  root</span><br><span class="line">    --red-4: hsla(0, 100%, 91%, 0.5)</span><br><span class="line">    --red-5: hsla(0, 100%, 95%, 0.2)</span><br><span class="line">    --red-5-5: hsla(0, 100%, 96%, 0.1)</span><br><span class="line">    --red-6: hsla(0, 100%, 98%, 0.2)</span><br></pre></td></tr></table></figure>
+<p>如果你要换成蓝色主题的话就把左边的0都改成220，第三个值的百分比代表了亮度，表现出来的效果就是red0颜色是最深的，red6是最浅的，可以自己调节百分比到自己喜欢的程度。</p>
+<p>先讲这么多，后续有补充再更新…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        <a data-aos="zoom-in" href="/2024/11/29/%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2024/11/29/%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" itemprop="commentCount"></span>
+          留言
+        </a>
+      
+      
+      
+      
+        <span data-aos="zoom-in" id="/2024/11/29/%E7%BD%91%E7%AB%99%E6%9E%84%E5%BB%BA/" class="leancloud_visitors article-visitor-link" data-flag-title="从1到2搭建一个自己的博客网站">
+          <span class="leancloud-visitors-count">0</span>
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
+      
+      
+      
+
+    </footer>
+  </div>
+  
+  <nav id="article-nav" data-aos="fade-up">
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        <img data-src="/images/pkqiu.webp" data-sizes="auto" alt="在github上配置ssh" class="lazyload">
+      
+      <a href="/2024/11/28/%E5%9C%A8github%E4%B8%8A%E9%85%8D%E7%BD%AEssh/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          在github上配置ssh
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+</article>
+
+  <section id="comments" class="vcomment" data-aos="fade-up"></section>
+
+
+
+
+
+
+</section>
+          
+        </div>
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2024-2024
+      <span class="footer-info-sep"></span>
+      xiaochuan
+    </div>
+    
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        1.9k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        00:09
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <div class="sidebar-top-taichi"></div>
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">网站基本介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%B4%E5%83%8F%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">头像问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">文章封面的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#about%E5%92%8Cfriend%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">about和friend没有任何显示的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E9%A1%B6%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%92%8C%E4%BE%A7%E8%BE%B9%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="toc-number">6.</span> <span class="toc-text">如何修改顶部导航栏和侧边导航栏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E8%89%B2%E6%80%8E%E4%B9%88%E6%94%B9%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">主题色怎么改的问题</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/OIP-C.webp" data-sizes="auto" alt="xiaochuan" class="lazyload">
+  <div class="sidebar-author-name">xiaochuan</div>
+  <div class="sidebar-description">xiaochuan Blog</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">1</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Home</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Archives</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/Author" aria-label="Author"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">Author</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/People" aria-label="People"></a>
+      <!--<div class="sidebar-menu-icon icon-taichi"></div>-->
+      <div class="sidebar-menu-link">People</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.6/dist/index.umd.js" integrity="sha384-vkGvf25gm1C1PbcoD5dNfc137HzNL&#x2F;hr1RKA5HniJOaawtvUmH5lTVFgFAruE9Ge" crossorigin="anonymous"></script>
+
+  <script>
+    window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#b3e0ff","#84bfff","#5a9aff","#3366ff"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#0000ff"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+    
+      
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+    
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+  
+<script src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js" integrity="sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn" crossorigin="anonymous" data-pjax></script>
+
+  <script data-pjax>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    var recordIP = JSON.parse('true');
+    var highlight = JSON.parse('true');
+    var visitor = JSON.parse('true');
+
+    new Valine({
+      el: '.vcomment',
+      appId: "CxeG15At5iKLRqUZo3jSSXxW-gzGzoHsz",
+      appKey: "5JsJNcebUmeYdqzmf0zZzI6T",
+      placeholder: "Just go go",
+      pageSize: '10',
+      avatar: 'mp',
+      lang: 'zh-cn',
+      recordIP: recordIP,
+      highlight: highlight,
+      visitor: visitor,
+      requiredFields: guest_info,
+      path: window.location.pathname
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.3.5' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+  </body>
+  </html>
+
