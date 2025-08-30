@@ -37,7 +37,7 @@
 <meta property="og:description" content="前言 距离创建这个博客网站也是将近一年了，一年后我也终于是想起来这个网站了，哈哈哈哈哈，我发誓，以后一定坚持发博客好吧！ 在重新拾起这个网站的时候也是遇到了许多麻烦事，顺便在这里记录一下，避免下次遇到又要搞半天（毕竟不知道下次想起来会不会又是一年后 bushi~）  源代码保存问题以及博客更新步骤记录现在才发现，原来当初搭建这个博客的时候，没有把源代码上传到 github 上（部署网站时执行 he">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-30T15:25:22.606Z">
-<meta property="article:modified_time" content="2025-08-30T16:23:28.175Z">
+<meta property="article:modified_time" content="2025-08-30T16:39:48.298Z">
 <meta property="article:author" content="xiaochuan">
 <meta property="article:tag" content="configuration">
 <meta property="article:tag" content="github">
@@ -296,7 +296,7 @@
 <ul>
 <li>本地更新博客：写文章（source&#x2F;_posts&#x2F;xxx.md）、修改配置等；</li>
 <li>生成静态文件：将源文件编译为浏览器可识别的静态文件，输出到 public&#x2F; 目录：<br>bash<br><code>hexo clean &amp;&amp; hexo generate</code> # clean 清除旧静态文件，generate 生成新文件</li>
-<li>部署静态文件到 Pages 仓库：通过 Hexo 命令自动推送 public&#x2F; 内容到 GitHub Pages 仓库：<br>bash<br><code>hexo deploy</code>  # 简写：<code>hexo d</code></li>
+<li>部署静态文件到 Pages 仓库：通过 Hexo 命令自动推送 public&#x2F; 内容到 GitHub Pages 仓库：<br>bash<br><code>hexo deploy</code>  # 简写：<code>hexo d</code><br>终极简写：<code>hexo clean &amp;&amp; hexo g -d</code></li>
 <li>备份源文件到源文件仓库（可选但建议）：如果修改了源文件（如新增文章、改主题），同步备份到源文件仓库：<br>bash<br><code>git add .</code><br><code>git commit -m &quot;新增文章：xxx.md&quot;</code><br><code>git push -u origin source</code></li>
 </ul>
 
