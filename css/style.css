@@ -2297,11 +2297,11 @@ pre .javascript .function {
   display: flex;
   position: relative;
   justify-content: center;
-  border: 10px var(--color-red-3-shadow) double;
+  border: 5px var(--color-red-3-shadow) solid;
   transition: border 0.5s;
 }
 .sidebar-menu-link-wrap:hover {
-  border: 10px var(--color-h2-after) double;
+  border: 5px var(--color-h2-after) solid;
 }
 .sidebar-menu-link-wrap:hover .sidebar-menu-icon:before {
   transform: rotate(90deg) scale(1.1);
@@ -2330,8 +2330,8 @@ pre .javascript .function {
   pointer-events: none;
 }
 .link-active {
-  background: var(--red-0);
-  border: 10px var(--color-wrap) double;
+  background: var(--red-1);
+  border: 5px var(--red-1) solid;
   box-shadow: 0 0 10px 3px var(--color-red-6-shadow);
   opacity: 0.8;
 }
