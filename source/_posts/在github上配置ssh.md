@@ -1,6 +1,7 @@
 ---
 title: 在github上配置ssh
 cover: /images/pkqiu.webp
+date: 2024-12-1
 tags: 
     - configuration
     - github
